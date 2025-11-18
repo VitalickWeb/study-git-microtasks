@@ -29,8 +29,8 @@ export const FullInput: FC<FullInputType> =
 
         let renderMessage = messages.map(m => {
             return (
-                <li className='messages' key={m.id}>
-                    {m.message}
+                <li className='messages' key={ m.id }>
+                    { m.message }
                 </li>
             )
         })

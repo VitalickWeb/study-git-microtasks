@@ -17,17 +17,17 @@ export const App = () => {
     let [messages, setMessage] = useState<MessageType[]>([
         {id: 1, message: 'message 1'},
         {id: 2, message: 'message 2'},
-        {id: 3, message: 'message 3'}
+        {id: 3, message: 'message 3'},
     ])
 
 
 
-    const addMessage = (message: string) => {
+    const addMessage = ( message: string ) => {
         let newMessage = {
             id: 4,
             message: message
         }
-        setMessage([newMessage, ...messages])
+        setMessage([newMessage, ...messages] )
     }
     return (
         <div className='App'>
