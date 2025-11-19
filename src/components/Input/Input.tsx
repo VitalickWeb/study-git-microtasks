@@ -7,8 +7,6 @@ export type InputType = {
 
 export const Input: FC<InputType> = ({title, addTitle}) => {
 
-    // let [message, setTitle] = useState('')
-
     const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         addTitle(e.currentTarget.value)
     }

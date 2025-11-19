@@ -3,6 +3,8 @@ import {v4} from 'uuid';
 import './App.css';
 import {MessageType} from "./components/FullInput/FullInput";
 import {Button} from "./components/Button/Button";
+import {Input} from "./components/Input/Input";
+import {Messages} from "./components/Messages/Messages";
 
 
 export const App = () => {
@@ -44,13 +46,19 @@ export const App = () => {
             {/*    messages={messages}*/}
             {/*    addMessage={addMessage}*/}
             {/*/>*/}
-
+            <Input
+                title={title}
+                addTitle={addTitle}
+            />
             <Button
                 title={title}
                 addTitle={addTitle}
-                messages={messages}
                 addMessage={addMessage}
             />
+            <Messages
+                messages={messages}
+            />
+
         </div>
     );
 }
