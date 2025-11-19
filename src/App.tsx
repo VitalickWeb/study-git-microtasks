@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import {v4} from 'uuid';
 import './App.css';
-import {FullInput, MessageType} from "./components/FullInput/FullInput";
-
+import {MessageType} from "./components/FullInput/FullInput";
+import {Button} from "./components/Button/Button";
 
 
 export const App = () => {
@@ -15,26 +16,38 @@ export const App = () => {
     // }
 
     let [messages, setMessage] = useState<MessageType[]>([
-        {id: 1, message: 'message 1'},
-        {id: 2, message: 'message 2'},
-        {id: 3, message: 'message 3'},
+        {id: v4(), message: 'message 1'},
+        {id: v4(), message: 'message 2'},
+        {id: v4(), message: 'message 3'},
     ])
 
-
+    let [title, setTitle] = useState<string>('')
 
     const addMessage = ( message: string ) => {
         let newMessage = {
-            id: 4,
+            id: v4(),
             message: message
         }
         setMessage([newMessage, ...messages] )
     }
+
+    const addTitle = (title: string) => {
+        setTitle(title)
+    }
+
     return (
         <div className='App'>
             {/*<div>{count}</div>*/}
             {/*<button onClick={addCount}>btn count</button>*/}
             {/*<button onClick={resetCount}>reset count</button>*/}
-            <FullInput
+            {/*<FullInput*/}
+            {/*    messages={messages}*/}
+            {/*    addMessage={addMessage}*/}
+            {/*/>*/}
+
+            <Button
+                title={title}
+                addTitle={addTitle}
                 messages={messages}
                 addMessage={addMessage}
             />

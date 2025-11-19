@@ -7,7 +7,7 @@ export type FullInputType = {
 }
 
 export type MessageType = {
-    id: number
+    id: string
     message: string
 }
 
@@ -24,7 +24,10 @@ export const FullInput: FC<FullInputType> =
         }
 
         const onClickButtonHandler = () => {
-            addMessage(title)
+            if (title.trim() !== '') {
+                addMessage(title)
+                setTitle('')
+            }
         }
 
         let renderMessage = messages.map(m => {
