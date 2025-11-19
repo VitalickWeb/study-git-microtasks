@@ -2,32 +2,23 @@ import React, {FC} from 'react';
 
 export type ButtonType = {
     title: string
-    addTitle: (title: string) => void
-    addMessage: (message: string) => void
+    callBack: () => void
 }
 
 export const Button: FC<ButtonType> =
     ({
-         title,
-         addTitle,
-
-         addMessage,
+        title,
+         callBack,
+        ...props
      }) => {
 
-
-
         const onClickButtonHandler = () => {
-            if (title.trim() !== '') {
-                addMessage(title)
-                addTitle('')
-            }
+            callBack()
         }
 
         return (
             <>
-
-                <button onClick={onClickButtonHandler}>+</button>
-
+                <button {...props} onClick={onClickButtonHandler}>{title}</button>
             </>
         );
     };

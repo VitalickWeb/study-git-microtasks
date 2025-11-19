@@ -2,13 +2,13 @@ import React, {ChangeEvent, FC} from 'react';
 
 export type InputType = {
     title: string
-    addTitle: (title: string) => void
+    setTitle: (title: string) => void
 }
 
-export const Input: FC<InputType> = ({title, addTitle}) => {
+export const Input: FC<InputType> = ({title, setTitle}) => {
 
     const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        addTitle(e.currentTarget.value)
+        setTitle(e.currentTarget.value)
     }
 
     return (

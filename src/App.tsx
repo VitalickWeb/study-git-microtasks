@@ -33,8 +33,9 @@ export const App = () => {
         setMessage([newMessage, ...messages] )
     }
 
-    const addTitle = (title: string) => {
-        setTitle(title)
+    const onClickButtonHandler = () => {
+        addMessage(title)
+        setTitle('')
     }
 
     return (
@@ -48,12 +49,11 @@ export const App = () => {
             {/*/>*/}
             <Input
                 title={title}
-                addTitle={addTitle}
+                setTitle={setTitle}
             />
             <Button
-                title={title}
-                addTitle={addTitle}
-                addMessage={addMessage}
+                title="+"
+                callBack={onClickButtonHandler}
             />
             <Messages
                 messages={messages}
